@@ -23,7 +23,7 @@ int sumaElementosR(const int a[], int *tamPtr){
 int main(){
 
     int tamArreglo=4;
-    int a[]={10,20,30,40};
+    const int a[]={10,20,30,40};
 
     //cout<<sumaElementos(a, &tamArreglo)<<endl;
     cout<<sumaElementosR(a, &tamArreglo);

@@ -2,6 +2,7 @@
 using namespace std;
 
 int invertirOrden(int a[],int *tPtr){
+        
     int temp;
     
     for (int i=0;i<*tPtr/2;i++){
@@ -13,15 +14,13 @@ int invertirOrden(int a[],int *tPtr){
     return temp;
 }
 
-
-
 int main(){
     int a[]={3,4,6,7,12},tam=5;
 
 
     invertirOrden(a,&tam);
     
-    for(int i=0;i<tam;i++)
+    for(int i=0;i<5;i++)
     cout<<a[i]<<" ";
     cout<<endl;
 

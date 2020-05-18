@@ -3,18 +3,13 @@
 using namespace std;
 
 void concatenar(char a[], char b[]){
-    int i=0,j=0;
-    while (b[i]!='\0'){        
-        i++;
+    int j=0;
+    int tamA=sizeof(a)/sizeof(a[0]);
+        
+    while (a[j]!='\0'){
+        b[tamA++] = a[j++];        
     }
-    while (a[j]!='\0')
-    {
-        b[j+i] = a[j];
-
-        j++;
-    }
-    b[i+j]=0;
-    
+    b[tamA]='\0';    
 }
 void mostrar(char c[]){
     cout<<c;
