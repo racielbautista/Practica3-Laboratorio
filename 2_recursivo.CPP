@@ -1,27 +1,31 @@
 #include <iostream>
 using namespace std;
 
-int invertirOrden(int a[],int *tPtr){
-        
-    int temp;
-    
-    for (int i=0;i<*tPtr/2;i++){
-        temp=a[i];
-        a[i]=a[*tPtr-1-i];
-        a[*tPtr-1-i]=temp;
+void invertirOrdenR(int a[],int tam, int pos){
+    int b=a[pos];
+    int c=a[tam-1];
+    swap(&b,&c);
 
-    }
-    return temp;
+    if(pos<(tam-1)/2)
+        invertirOrdenR(a,--tam,++pos);
+
 }
+
+void swap(int *bPtr, int *cPtr){
+    *bPtr^=*cPtr;
+    *cPtr^=*bPtr;
+    *bPtr^=*cPtr;
+}
+
+
 
 int main(){
     int a[]={3,4,6,7,12},tam=5;
 
 
-    invertirOrden(a,&tam);
+    invertirOrdenR(a,tam,0);
     
-    for(int i=0;i<5;i++)
-    cout<<a[i]<<" ";
-    cout<<endl;
+    
+return 0;
 
 }
